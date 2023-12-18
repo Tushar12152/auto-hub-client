@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Responsive = ({children}) => {
     return (
-        <div className='w-[90%] mx-auto'>
+        <div className='w-[98%] mx-auto'>
              {children}
         </div>
     );
