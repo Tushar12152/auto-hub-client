@@ -58,7 +58,7 @@ const MenuDropdown = () => {
               className='rounded-full'
               referrerPolicy='no-referrer'
               src={user && user.photoURL ? user.photoURL : data?.image}
-              alt='profile'
+              alt='User'
               height='30'
               width='30'
             />
