@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
 import Responsive from "../Container/Responsive";
+import MenuDropdown from "./MenuDropDown";
 
 const Nav = () => {
 
-const nav=<div>
-       <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>Home</NavLink>
+const nav=<div className="flex gap-4 items-center">
+       <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-red-700 p-1 rounded text-white" : ""}>Home</NavLink>
+
+       <NavLink to="/sellCar" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-red-700 p-1 rounded text-white" : ""}>Sell</NavLink>
 </div>
 
 
@@ -30,7 +33,7 @@ const nav=<div>
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+     <MenuDropdown/>
   </div>
 </div>
             </Responsive>

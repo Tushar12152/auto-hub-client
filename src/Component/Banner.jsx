@@ -12,7 +12,13 @@ const Banner = () => {
                     <h1 className="text-white font-bold text-4xl text-center pt-44">Powerful Automotive Directory</h1>
                         <h3 className="text-white text-center">Create your Automotive website within minutes, no extra plugins required.</h3>
                     </div>
+
+                    <div className="w-32 mx-auto mt-10 flex  gap-5 ">
+                         <button className="btn cursor-pointer bg-red-700 text-white">btn1</button>
+                          <button className="btn cursor-pointer bg-red-700 text-white">btn2</button>
                     </div>
+                    </div>
+                    
 
                     
 
