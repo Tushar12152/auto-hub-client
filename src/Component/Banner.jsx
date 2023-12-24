@@ -15,7 +15,7 @@ const Banner = () => {
 
                     <div className="w-32 mx-auto mt-10 flex  gap-5 ">
                          <button className="btn cursor-pointer bg-red-700 text-white">Get Started</button>
-                          <button className="btn cursor-pointer bg-red-700 text-white">btn2</button>
+                          <button className="btn cursor-pointer bg-red-700 text-white">Lets Explore</button>
                     </div>
                     </div>
                     
