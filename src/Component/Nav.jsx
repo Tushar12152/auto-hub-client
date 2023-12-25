@@ -13,7 +13,7 @@ const nav=<div className="flex gap-4 items-center">
 
 
     return (
-        <div >
+        <div className="fixed z-10 w-full mx-auto  opacity-40">
             <Responsive>
             <div className="navbar bg-base-100">
   <div className="navbar-start">
