@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Responsive from "../Container/Responsive";
 
 const Banner = () => {
@@ -15,7 +16,7 @@ const Banner = () => {
 
                     <div className="w-32 mx-auto mt-10 flex  gap-5 ">
                          <button className="btn cursor-pointer bg-red-700 text-white">Get Started</button>
-                          <button className="btn cursor-pointer bg-red-700 text-white">Lets Explore</button>
+                        <Link to='/login'>  <button className="btn  bg-red-700 text-white">Lets Explore</button></Link>
                     </div>
                     </div>
                     
