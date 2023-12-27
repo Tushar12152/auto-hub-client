@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Responsive from "./../Container/Responsive";
 const Footer = () => {
   return (
@@ -13,10 +14,11 @@ const Footer = () => {
           </nav>
           <nav>
             <header className="footer-title">Company</header>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+            <Link to='/about'>About Us</Link>
+            <Link to='/contact'>Contact Us</Link>
+            <Link to='/login'>Login</Link>
+            <Link to='/sellCar'>sell</Link>
+           
           </nav>
           <nav>
             <header className="footer-title">Legal</header>
