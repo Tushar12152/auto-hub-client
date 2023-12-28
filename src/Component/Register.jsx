@@ -53,7 +53,7 @@ const handleRegister=async(e)=>{
              toast.error(err.message);
         })
         
-        console.log(name,image,email,password);
+        // console.log(name,image,email,password);
 }
 
 
