@@ -11,9 +11,9 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 const Register = () => {
 
     const [show,setShow]=useState(false)
-    const {createUser,user}=useAuth()
+    const {createUser}=useAuth()
     const axiosSecure=useAxiosSecure()
-    const userMail=user?.email
+  
 
 
 const handleRegister=async(e)=>{
@@ -31,7 +31,7 @@ const handleRegister=async(e)=>{
         const password=form.password.value;
 
         const usersInfo={
-           image,name,userMail,
+           image,name,userMail:email,
         }
      
 

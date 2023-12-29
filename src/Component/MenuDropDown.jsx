@@ -4,40 +4,41 @@ import { Link } from 'react-router-dom'
 
 
 // import swal from 'sweetalert'
-// import useAuth from '../Hooks/useAuth'
-// import { useQuery } from '@tanstack/react-query'
-// import useAxiosSecure from '../Hooks/useAxiosSecure'
+import useAuth from '../Hooks/useAuth'
+import { useQuery } from '@tanstack/react-query'
+import useAxiosSecure from '../Hooks/useAxiosSecure'
+import swal from 'sweetalert'
 
 const MenuDropdown = () => {
-    const user=false;
-    const data=true;
-  const [isOpen, setIsOpen] = useState(false)
-// //   const { user,logOut } = useAuth()
-// //    const userEmail=user?.email
-//     // const axiosSecure=useAxiosSecure()
-
-//    const { data=[] } = useQuery({
-//     queryKey: ['users'],
-//     queryFn: async () =>{
-//         // const res=await axiosSecure.get(`/users/${userEmail}`)
-
-//         // return res.data
-//     }
+   
     
-//   })
+  const [isOpen, setIsOpen] = useState(false)
+  const { user,  logOut } = useAuth()
+   const userEmail=user?.email
+    const axiosSecure=useAxiosSecure()
 
-// // console.log(data);
+   const { data=[] } = useQuery({
+    queryKey: ['users'],
+    queryFn: async () =>{
+        const res=await axiosSecure.get(`/users/${userEmail}`)
 
-//   const handleLogOut=()=>{
-//     // logOut()
-//     .then(()=>{
-//       swal("Log Out", "You are logged out ", "success");
+        return res.data
+    }
+    
+  })
+
+// console.log(data);
+
+  const handleLogOut=()=>{
+    logOut()
+    .then(()=>{
+      swal("Log Out", "You are logged out ", "success");
  
-//     })
-//     .catch(err=>{
-//       console.log(err);
-//     })
-//   }
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }
 
   return (
     <div className='relative z-10'>
@@ -79,7 +80,7 @@ const MenuDropdown = () => {
               Dashboard
             </Link>
 
-            <button  className='px-4 py-3  hover:bg-neutral-100 transition font-semibold'>Log out</button>
+            <button onClick={handleLogOut}  className='px-4 py-3  hover:bg-neutral-100 transition font-semibold'>Log out</button>
             </>:
               <>
                <button  className='px-4 py-3 mx-auto hover:bg-neutral-100 transition font-semibold'>
