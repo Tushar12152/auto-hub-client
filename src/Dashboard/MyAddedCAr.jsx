@@ -3,13 +3,15 @@ import Title from "../Container/Title";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useAuth from "../Hooks/useAuth";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import toast from "react-hot-toast";
+import swal from "sweetalert";
 
 const MyAddedCAr = () => {
     const {user}=useAuth()
     const userMail=user?.email; 
     const axiosSecure=useAxiosSecure()
 
-    const {  data=[] } = useQuery({
+    const {  data=[],refetch } = useQuery({
         queryKey: ['car'],
         queryFn: async() =>{
             const res=await axiosSecure.get('/cars')
@@ -23,6 +25,37 @@ const MyAddedCAr = () => {
    const usersItem=data.filter(item=>item.Added===userMail)
 //    console.log(usersItem);
 
+const handleDelete=(id,name)=>{
+   
+
+    swal({
+        title: "Are you sure?",
+        text: `${name} will be Deleted, do not  Recovery this file`,
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            axiosSecure.delete(`/cars/${id}`)
+            .then(res=>{
+                 if(res.data.deletedCount>0){
+                      toast.success('Your  Added car is deleted')
+                      refetch()
+                 }
+            })
+
+
+        } else {
+          swal("Your Added car is safe!");
+        }
+      })
+
+
+
+    
+  
+}
 
 
     return (
@@ -51,7 +84,7 @@ const MyAddedCAr = () => {
             <td>{item.carName}</td>
             <td>P{item.price}</td>
             <td><button className="text-xl text-red-700"><FaEdit/></button></td>
-            <td><button className="text-xl text-red-700"><FaTrash/></button></td>
+            <td><button onClick={()=>handleDelete(item._id,item.carName)} className="text-xl text-red-700"><FaTrash/></button></td>
           </tr>)
       }
      

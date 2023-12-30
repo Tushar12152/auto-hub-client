@@ -42,7 +42,7 @@ const HandleSubmit=async e=>{
      const sellCar=await axiosSecure.post('/cars',car)
      if(sellCar.data.insertedId){
             toast.success('Your Car is added')
-            navigate(-1)
+            navigate('/dashboard/my-adds')
 
      }
 
