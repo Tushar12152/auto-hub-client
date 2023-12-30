@@ -1,4 +1,4 @@
-import {   FaCar,  FaHome } from "react-icons/fa";
+import {   FaCar,  FaCarSide,  FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { MdManageAccounts,} from "react-icons/md";
 
@@ -31,6 +31,12 @@ const Dashboard = () => {
                                 <NavLink to="/dashboard/addCar">
                                 <MdManageAccounts />
                                    Add My Car</NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink to="/dashboard/my-adds">
+                                <FaCarSide/>
+                                 My Added</NavLink>
                             </li>
 
 
