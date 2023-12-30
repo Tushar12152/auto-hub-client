@@ -4,6 +4,7 @@ import Home from "../Page/Home";
 import SellCar from "../Page/SellCar";
 import Register from "../Component/Register";
 import Login from "../Component/Logi";
+import Dashboard from "../Layouts/Dashboard";
 
 const Router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const Router = createBrowserRouter([
     {
         path:"/login",
         element:<Login/>
+    },
+    {
+        path:'/dashboard',
+        element:<Dashboard/>
     }
 ])
 
