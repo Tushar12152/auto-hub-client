@@ -36,11 +36,11 @@ const CArUpdate = () => {
         }
     
      
-        console.log(updatecar);
+        // console.log(updatecar);
 
 
 
-         const updateCar=await axiosSecure.patch('/cars',updatecar)
+         const updateCar=await axiosSecure.patch(`/cars/${data._id}`,updatecar)
          if(updateCar.data.modifiedCount){
                 toast.success('Your Car is updated')
                 navigate(-1)
@@ -114,7 +114,7 @@ const CArUpdate = () => {
   </label>
 </div>
 
-<div className="form-control  mt-6 w-[50%]">
+<div className="form-control  mt-8 w-[50%]">
   <button className="btn bg-red-700 text-white ">Update {data.carName}</button>
 </div>
 
