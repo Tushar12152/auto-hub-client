@@ -1,10 +1,14 @@
+import toast from "react-hot-toast";
 import { imageUpload } from "../Api/ImageUpload";
 import Title from "../Container/Title";
+import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
+import { useNavigate } from "react-router-dom";
 
 const AddCar = () => {
    const axiosSecure=useAxiosSecure()
-
+   const {user}=useAuth()
+   const navigate=useNavigate()
 
 const HandleSubmit=async e=>{
     e.preventDefault()
@@ -16,25 +20,31 @@ const HandleSubmit=async e=>{
     const image=img?.data?.display_url
 
     const carName=form.carName.value;
-    const model=form.target.value;
+    const model=form.model.value;
      const price=form.Price.value;
      const registration=form.Registration.value;
      const brand=form.Brand.value;
 
      console.log(image,carName,model,price,registration,brand);
 
-    // const car={
-    //     image,
-    //     carName,
-    //     model,
-    //     price,
-    //     registration,
-    //     brand
-    // }
+    const car={
+        image,
+        carName,
+        model,
+        price,
+        registration,
+        brand,
+        Added:user.email,
+
+    }
 
 
-    //  const sellCar=await axiosSecure.post('/cars',car)
-    //  console.log(sellCar);
+     const sellCar=await axiosSecure.post('/cars',car)
+     if(sellCar.data.insertedId){
+            toast.success('Your Car is added')
+            navigate(-1)
+
+     }
 
 
 }
