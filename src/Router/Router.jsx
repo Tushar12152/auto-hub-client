@@ -5,6 +5,7 @@ import SellCar from "../Page/SellCar";
 import Register from "../Component/Register";
 import Login from "../Component/Logi";
 import Dashboard from "../Layouts/Dashboard";
+import AddCar from "../Dashboard/AddCar";
 
 const Router = createBrowserRouter([
     {
@@ -31,7 +32,13 @@ const Router = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element:<Dashboard/>
+        element:<Dashboard/>,
+        children:[
+            {
+                 path:"/dashboard/addCar",
+                 element:<AddCar/>
+            }
+        ]
     }
 ])
 
