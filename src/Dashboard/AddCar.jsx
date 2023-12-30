@@ -130,7 +130,7 @@ const HandleSubmit=async e=>{
 <div className="form-control mt-6">
   <button className="btn bg-red-700 text-white ">Ready For sale</button>
 </div>
-</form>
+             </form>
 
 
 

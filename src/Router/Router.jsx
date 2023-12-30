@@ -7,6 +7,7 @@ import Login from "../Component/Logi";
 import Dashboard from "../Layouts/Dashboard";
 import AddCar from "../Dashboard/AddCar";
 import MyAddedCAr from "../Dashboard/MyAddedCAr";
+import CArUpdate from "../Dashboard/CArUpdate";
 
 const Router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ const Router = createBrowserRouter([
             {
                 path:"/dashboard/my-adds",
                 element:<MyAddedCAr/>
+            },
+            {
+                path:'/dashboard/addedItemUpdate/:id',
+                element:<CArUpdate/>,
+                loader:({params})=>fetch(`http://localhost:5001/cars/${params.id}`)
             }
         ]
     }

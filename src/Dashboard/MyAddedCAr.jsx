@@ -5,6 +5,7 @@ import useAuth from "../Hooks/useAuth";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
 
 const MyAddedCAr = () => {
     const {user}=useAuth()
@@ -83,7 +84,7 @@ const handleDelete=(id,name)=>{
             <th>{idx+1}</th>
             <td>{item.carName}</td>
             <td>P{item.price}</td>
-            <td><button className="text-xl text-red-700"><FaEdit/></button></td>
+            <td><Link to={`/dashboard/addedItemUpdate/${item._id}`} className="text-xl text-red-700"><FaEdit/></Link></td>
             <td><button onClick={()=>handleDelete(item._id,item.carName)} className="text-xl text-red-700"><FaTrash/></button></td>
           </tr>)
       }
