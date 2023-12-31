@@ -8,6 +8,7 @@ import Dashboard from "../Layouts/Dashboard";
 import AddCar from "../Dashboard/AddCar";
 import MyAddedCAr from "../Dashboard/MyAddedCAr";
 import CArUpdate from "../Dashboard/CArUpdate";
+import Profile from "../Dashboard/Profile";
 
 const Router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ const Router = createBrowserRouter([
                 path:'/dashboard/addedItemUpdate/:id',
                 element:<CArUpdate/>,
                 loader:({params})=>fetch(`http://localhost:5001/cars/${params.id}`)
+            },
+            {
+                path:"/dashboard/Profile",
+                element:<Profile/>
             }
         ]
     }

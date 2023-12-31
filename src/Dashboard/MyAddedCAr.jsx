@@ -83,7 +83,7 @@ const handleDelete=(id,name)=>{
         usersItem.map((item,idx)=> <tr key={item._id}>
             <th>{idx+1}</th>
             <td>{item.carName}</td>
-            <td>P{item.price}</td>
+            <td>{item.price}</td>
             <td><Link to={`/dashboard/addedItemUpdate/${item._id}`} className="text-xl text-red-700"><FaEdit/></Link></td>
             <td><button onClick={()=>handleDelete(item._id,item.carName)} className="text-xl text-red-700"><FaTrash/></button></td>
           </tr>)
