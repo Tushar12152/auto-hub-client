@@ -19,7 +19,7 @@ const Profile = () => {
 
     return (
         <div>
-             <Title heading={`Welcome ${data?.name} to  Profile`}></Title>
+             <Title heading={`Welcome ${data?.name} to Profile`}></Title>
 
              <div >
               <div className="avatar ">
